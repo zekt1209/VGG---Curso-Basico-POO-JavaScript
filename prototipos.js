@@ -88,6 +88,7 @@ const cursoBasicoDePOO = new Course({
 
 class LearningPath {
     constructor({
+        // Definimos los atributos que vamos a necesitar
         // Inicializar los atributos que le asignaremos a la clase LearningPaths
         id,
         name,
