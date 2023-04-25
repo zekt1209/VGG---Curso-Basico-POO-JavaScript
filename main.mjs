@@ -1,14 +1,9 @@
-import student from './modules/student.js'
-import course from './modules/course.js'
-import learningPath from './modules/learningPath.js'
-import lesson from './modules/lesson.js'
-import teacher from './modules/teacher.js'
+import Course from './modules/course.mjs'
+import LearningPath from './modules/learningPath.mjs'
+import Lesson from './modules/lesson.mjs'
+import Student from './modules/student.mjs'
+import Teacher from './modules/teacher.mjs'
 
-import Teacher from './teacher.js'
-import Course from './course.js'
-import Lesson from './lesson.js'
-import LearningPath from './learningPath.js'
-import Student from './student.js'
 
 
 //* Teachers ---------------------
@@ -27,7 +22,7 @@ const ClauAlderete = new Teacher({
 console.log(ClauAlderete);
 
 
-//* Lecciones -----------------------
+//* Lessons -----------------------
 const lesson1PB = new Lesson({
   id: 1,
   title: 'Clase 1 Programación Básica',
@@ -41,11 +36,11 @@ const lesson1DM = new Lesson({
 console.log(lesson1DM);
 
 
-//* Cursos ----------------------------
+//* Courses ----------------------------
 const cursoProgramacionBasica = new Course({
   id: 1,
   name: "Curso gratis de programación básica",
-  classes: [lesson1PB],
+  lessons: [lesson1PB],
   teacher: FreddyVega,
 });
 console.log(cursoProgramacionBasica);
@@ -53,29 +48,29 @@ console.log(cursoProgramacionBasica);
 const cursoIntroMarketingDigital = new Course({
   id: 2,
   name: 'Curso de Introducción al Marketing Digital',
-  classes: [lesson1DM],
+  lessons: [lesson1DM],
   teacher: ClauAlderete
 });
 console.log(cursoIntroMarketingDigital);
 
 
-//* Escuelas ---------------------
+//* Learning Paths ---------------------
 const escuelaDesarrolloWeb = new LearningPath({
   id: 1,
-  title: 'Escuela de Desarrollo Web',
+  name: 'Escuela de Desarrollo Web',
   courses: [cursoProgramacionBasica],
 });
 console.log(escuelaDesarrolloWeb);
 
 const escuelaMarketingDigital = new LearningPath({
   id: 2,
-  title: 'Marketing Digital',
+  name: 'Marketing Digital',
   courses: [cursoIntroMarketingDigital],
 });
 console.log(escuelaMarketingDigital);
 
 
-//* Estudiantes ---------------------
+//* Students ---------------------
 const miguel = new Student({
   id: 1,
   name: 'Miguel',
