@@ -4,8 +4,21 @@ export default class Lesson {
         title,
     }) {
         this.id = id;
-        this.title = title;
+        this._title = title;
     }
+
+    get title() {
+        return this._title; 
+    }
+
+    set title(newTitle) {
+        if (newTitle === "Bad Title") {
+            console.error("Hey ... NO");
+        } else {
+            this._title = newTitle;
+        }
+    }
+
 }
 
 export {Lesson};

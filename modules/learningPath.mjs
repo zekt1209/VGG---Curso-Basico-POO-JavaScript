@@ -8,8 +8,20 @@ export default class LearningPath {
     }) {
         // Asociar los atributos declarados en el constructor con las variables de la clase.
         this.id = id;
-        this.name = name;
+        this._name = name;
         this.courses = courses;
+    }
+
+    get name() {
+        return this._name; 
+    }
+
+    set name(newName) {
+        if (newName === "Bad learningPath") {
+            console.error("Hey ... NO");
+        } else {
+            this._name = newName;
+        }
     }
 
     addCourse(course) {

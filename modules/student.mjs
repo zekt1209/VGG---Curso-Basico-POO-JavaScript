@@ -13,7 +13,7 @@ export default class Student {
     }) {
         this.id = id;
         this.email = email;
-        this.name = name;
+        this._name = name;
         this.username = username;
         this.points = points;
         this.socialMedia = {
@@ -23,5 +23,17 @@ export default class Student {
         };
         this.approvedCourses = approvedCourses;
         this.learningPaths = learningPaths;
+    }
+
+    get name() {
+        return this._name;
+    }
+
+    set name(newName) {
+        if (newName === "Bad Name") {
+            console.error("Hey ... NO");
+        } else {
+            this._name = newName;
+        }
     }
 };
