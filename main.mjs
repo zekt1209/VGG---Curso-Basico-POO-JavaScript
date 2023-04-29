@@ -1,9 +1,12 @@
 import Course from './modules/course.mjs'
 import LearningPath from './modules/learningPath.mjs'
 import Lesson from './modules/lesson.mjs'
-import Student from './modules/student.mjs'
+//import Student from './modules/student.mjs'
 import Teacher from './modules/teacher.mjs'
 
+import FreeStudent from './modules/typesOfStudents/freeStudent.mjs'
+import BasicStudent from './modules/typesOfStudents/basicStudent.mjs'
+import ExpertStudent from './modules/typesOfStudents/expertStudent.mjs'
 
 
 //* Teachers ---------------------
@@ -42,6 +45,7 @@ const cursoProgramacionBasica = new Course({
   name: "Curso gratis de programación básica",
   lessons: [lesson1PB],
   teacher: FreddyVega,
+  isFree: false,
 });
 console.log(cursoProgramacionBasica);
 
@@ -50,6 +54,15 @@ const cursoIntroMarketingDigital = new Course({
   name: 'Curso de Introducción al Marketing Digital',
   lessons: [lesson1DM],
   teacher: ClauAlderete
+});
+console.log(cursoIntroMarketingDigital);
+
+const cursoPracticoHTML = new Course({
+  id: 3,
+  name: 'Curso Practico de HTML y CSS',
+  lessons: [lesson1DM],
+  teacher: ClauAlderete,
+  lang: "english",
 });
 console.log(cursoIntroMarketingDigital);
 
@@ -71,7 +84,7 @@ console.log(escuelaMarketingDigital);
 
 
 //* Students ---------------------
-const miguel = new Student({
+const miguel = new FreeStudent({
   id: 1,
   name: 'Miguel',
   email: 'miguel@gmail.com',
@@ -80,4 +93,16 @@ const miguel = new Student({
   approvedCourses: [cursoProgramacionBasica],
   learningPaths: [escuelaDesarrolloWeb]
 });
+miguel.approveCourse(cursoPracticoHTML);
 console.log(miguel);
+
+
+const victor = new ExpertStudent({
+  id: 2,
+  name: 'Victor Guzman',
+  email: 'victor@gmail.com',
+  username: 'victor.guzman',
+  points: 4543,
+})
+victor.approveCourse(cursoPracticoHTML);
+console.log(victor);

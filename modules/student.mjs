@@ -37,3 +37,16 @@ export default class Student {
         }
     }
 };
+
+
+
+
+
+
+class ExpertStudent extends Student {
+    constructor(props) {
+        super(props);
+    }
+
+
+}
