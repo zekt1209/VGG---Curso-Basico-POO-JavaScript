@@ -7,6 +7,7 @@ import Teacher from './modules/teacher.mjs'
 import FreeStudent from './modules/typesOfStudents/freeStudent.mjs'
 import BasicStudent from './modules/typesOfStudents/basicStudent.mjs'
 import ExpertStudent from './modules/typesOfStudents/expertStudent.mjs'
+import TeacherSudent from './modules/typesOfStudents/teacherStudent.mjs'
 
 
 //* Teachers ---------------------
@@ -106,3 +107,15 @@ const victor = new ExpertStudent({
 })
 victor.approveCourse(cursoPracticoHTML);
 console.log(victor);
+victor.publicarComentario("Estoy apunto de terminar el curso de POO :) ");
+
+const freddy = new TeacherSudent({
+  id: 3,
+  name: 'Freddy Vega',
+  email: 'freddy@gmail.com',
+  username: 'freddy.vega',
+  points: 100,
+})
+console.log(freddy);
+
+freddy.publicarComentario("Excelente clase! :) ");

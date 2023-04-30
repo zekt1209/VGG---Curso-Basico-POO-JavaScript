@@ -1,3 +1,5 @@
+import Comment from "./comment.mjs";
+
 export default class Student {
     constructor({
         id,
@@ -36,6 +38,16 @@ export default class Student {
             this._name = newName;
         }
     }
+
+
+    publicarComentario(commentContent) {
+        const comment = new Comment({
+            content: commentContent,
+            studentName: this._name,
+        });
+
+        comment.publicar();
+    }
 };
 
 
@@ -43,10 +55,3 @@ export default class Student {
 
 
 
-class ExpertStudent extends Student {
-    constructor(props) {
-        super(props);
-    }
-
-
-}
