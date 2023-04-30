@@ -6,7 +6,7 @@ export default class TeacherSudent extends Student {
     constructor(props){
         super(props);
     } 
-
+    // Este metodo es propio de cada subclase, osea que no lo tiene la clase madre (Student)
     approveCourse(newCourse) {
         this.approvedCourses.push(newCourse);
     }
